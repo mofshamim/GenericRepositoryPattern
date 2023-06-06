@@ -15,7 +15,10 @@ namespace GenericRepositoryPattern.ServiceLayer
 
         public void Add(Employee employee)
         {
+            _unitofWork.BeginTransaction();
             _unitofWork.EmployeeRepository.Add(employee);
+            _unitofWork.Save();
+            _unitofWork.CommitTransaction();
         }
         public void Update(Employee employee)
         {

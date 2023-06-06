@@ -11,6 +11,12 @@ namespace GenericRepositoryPattern.UnitOfWorks
         private readonly ApplicationDbContext _context;
         private IDbContextTransaction _transaction;
 
+        //public UnitofWork(ApplicationDbContext context)
+        //{
+        //    _context = context;
+        //    EmployeeRepository = new EmployeeRepository(context);
+        //}
+
         public UnitofWork(ApplicationDbContext context, IDbContextTransaction transaction)
         {
             _context = context;
@@ -35,7 +41,7 @@ namespace GenericRepositoryPattern.UnitOfWorks
 
         public void RollbackTransaction()
         {
-            _transaction?.Rollback();
+           _transaction?.Rollback();
         }
 
         public IEmployeeRepository EmployeeRepository { get; private set; }

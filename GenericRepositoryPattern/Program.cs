@@ -5,7 +5,7 @@ using GenericRepositoryPattern.Domain.Entities;
 using GenericRepositoryPattern.ServiceLayer;
 using GenericRepositoryPattern.UnitOfWorks;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.EntityFrameworkCore.Storage;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,11 +17,22 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("dbconnection")));
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options.UseSqlServer(@"Server=SHAMIM\SQLEXPRESS;Database=EmployeeDb;User Id=sa;Password=sa1234;TrustServerCertificate=True");
+});
+
+
+//builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("dbconnection")));
 
 builder.Services.AddScoped<IUnitofWork, UnitofWork>();
-builder.Services.AddTransient<IEmployeeService, EmployeeService>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
+builder.Services.AddScoped<IDbContextTransaction>(provider =>
+{
+    var dbContext = provider.GetRequiredService<ApplicationDbContext>();
+    return dbContext.Database.BeginTransaction();
+});
 
 
 var app = builder.Build();

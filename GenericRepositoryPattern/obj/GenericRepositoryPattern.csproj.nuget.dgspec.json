@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Project\\GenericRepositoryPattern\\GenericRepositoryPattern\\GenericRepositoryPattern.csproj": {}
+    "E:\\gihub\\GenericRepositoryPattern\\GenericRepositoryPattern\\GenericRepositoryPattern.csproj": {}
   },
   "projects": {
-    "E:\\Project\\GenericRepositoryPattern\\GenericRepositoryPattern\\GenericRepositoryPattern.csproj": {
+    "E:\\gihub\\GenericRepositoryPattern\\GenericRepositoryPattern\\GenericRepositoryPattern.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\GenericRepositoryPattern\\GenericRepositoryPattern\\GenericRepositoryPattern.csproj",
+        "projectUniqueName": "E:\\gihub\\GenericRepositoryPattern\\GenericRepositoryPattern\\GenericRepositoryPattern.csproj",
         "projectName": "GenericRepositoryPattern",
-        "projectPath": "E:\\Project\\GenericRepositoryPattern\\GenericRepositoryPattern\\GenericRepositoryPattern.csproj",
+        "projectPath": "E:\\gihub\\GenericRepositoryPattern\\GenericRepositoryPattern\\GenericRepositoryPattern.csproj",
         "packagesPath": "C:\\Users\\omarf\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\GenericRepositoryPattern\\GenericRepositoryPattern\\obj\\",
+        "outputPath": "E:\\gihub\\GenericRepositoryPattern\\GenericRepositoryPattern\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\omarf\\AppData\\Roaming\\NuGet\\NuGet.Config",
