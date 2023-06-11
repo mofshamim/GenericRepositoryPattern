@@ -28,12 +28,6 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<IUnitofWork, UnitofWork>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
-builder.Services.AddScoped<IDbContextTransaction>(provider =>
-{
-    var dbContext = provider.GetRequiredService<ApplicationDbContext>();
-    return dbContext.Database.BeginTransaction();
-});
-
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.

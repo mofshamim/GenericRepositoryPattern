@@ -17,10 +17,9 @@ namespace GenericRepositoryPattern.UnitOfWorks
         //    EmployeeRepository = new EmployeeRepository(context);
         //}
 
-        public UnitofWork(ApplicationDbContext context, IDbContextTransaction transaction)
+        public UnitofWork(ApplicationDbContext context)
         {
             _context = context;
-            _transaction = transaction;
             EmployeeRepository = new EmployeeRepository(context);
         }
 
